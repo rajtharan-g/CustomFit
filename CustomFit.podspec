@@ -20,8 +20,8 @@ This CocoaPods library helps you perform calculation.
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author       = { "rajtharan" => "tharanit99@gmail.com" }
 
-  spec.ios.deployment_target = "12.1"
-  spec.swift_version = "4.2"
+  spec.ios.deployment_target = "12.2"
+  spec.swift_version = "5.0"
 
   spec.source        = { :git => "https://github.com/rajtharan-g/CustomFit.git", :tag => "#{spec.version}" }
   spec.source_files  = "CustomFit/**/*.{h,m,swift}"
