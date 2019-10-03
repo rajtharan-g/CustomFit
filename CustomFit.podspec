@@ -24,7 +24,7 @@ This CocoaPods library helps you perform calculation.
 #  spec.platform     = :ios, "10.0"
   spec.swift_version = "5.0"
 
-  spec.source        = { :git => "https://github.com/rajtharan-g/CustomFit.git", :tag => "#{spec.version}" }
+  spec.source        = { :git => "https://github.com/rajtharan-g/CustomFit.git", :commit => "0f042d110bb833dd5ee33f5543026cc0e1bd0fb5" }
   spec.source_files  = "CustomFit/*.swift"
   spec.static_framework = true
   spec.dependency "Alamofire"
