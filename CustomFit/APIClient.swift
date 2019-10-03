@@ -120,7 +120,6 @@ class APIClient {
     }
     //
     func pushConfigRequestSummaryEvents(events: Array<CFConfigRequestSummary>, completion: @escaping (Error?) -> Void) {
-        
         if let url = URL(string: "\(BASE_URL)/v1/config/request/summary") {
             if let encodedObject = try? encoder.encode(events) {
                 do {

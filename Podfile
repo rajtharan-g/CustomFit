@@ -4,20 +4,12 @@
 target 'CustomFit' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
   pod 'Alamofire'
+  pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Messaging'
-  pod 'Alamofire'
+  pod 'Firebase/Firestore'
 
-end
-
-target 'Example' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  target 'ExampleUITests' do
-    # Pods for testing
-  end
+  # Pods for CustomFit
 
 end

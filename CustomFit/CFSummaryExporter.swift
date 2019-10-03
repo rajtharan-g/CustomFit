@@ -65,7 +65,7 @@ class CFSummaryExporter {
                     }
                     var eventsToDispatch =  Array<CFConfigRequestSummary>()
                     eventsToDispatch = self.events?.elements ?? []
-                    self.events = nil
+                    self.events = CFQueue(elements: Array())
                     APIClient.shared.pushConfigRequestSummaryEvents(events: eventsToDispatch, completion: { (error) in
                         if error != nil {
                             for event in eventsToDispatch {
@@ -91,6 +91,8 @@ class CFSummaryExporter {
             events.enqueue(CFConfigRequestSummary(config: config))
             CFSharedPreferences.shared.setConfigRequestSummary(events: events.elements)
             flushEvents()
+        } else {
+            print("Error")
         }
     }
     

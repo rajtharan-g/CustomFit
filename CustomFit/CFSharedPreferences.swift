@@ -168,10 +168,8 @@ class CFSharedPreferences {
     func setEvents(events: CFQueue<CFEvent>?) {
         if let events = events {
             do {
-                if let events = events.elements as? Array<CFEvent> {
-                    let encoded = try encoder.encode(events)
-                    defaults.set(encoded, forKey: sharedPrefEvents)
-                }
+                let encoded = try encoder.encode(events.elements)
+                defaults.set(encoded, forKey: sharedPrefEvents)
             } catch let error {
                 print(TAG, "Exception: \(error.localizedDescription)")
             }

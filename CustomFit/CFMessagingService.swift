@@ -6,7 +6,6 @@
 //  Copyright © 2019 Custom Fit. All rights reserved.
 //
 
-import UIKit
 import FirebaseMessaging
 
 class CFMessagingService: NSObject {

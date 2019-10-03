@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import FirebaseInstanceID
 import UserNotifications
-import FirebaseMessaging
+import FirebaseInstanceID
 
 public protocol CFConfigChangeObserver {
     func onChanged(key:String)
@@ -61,7 +60,6 @@ public class CustomFit: NSObject {
         _ = CFSDKConfig.shared
         scheduleFetchConfigJobIfNeeded()
         CFSummaryExporter.shared.reset()
-        _ = CFSummaryExporter()
         _ = CFTracker()
         CFTracker.shared.reset()
         InstanceID.instanceID().instanceID { (result, error) in
@@ -471,7 +469,8 @@ public class CustomFit: NSObject {
                 if observers.count > 0 {
                     let newConfig = newConfigs?[configKey]
                     let oldConfig = oldConfigs?[configKey]
-                    if (newConfig != nil && oldConfig != nil && newConfig != oldConfig) ||
+                    // FIXME: - Condition 
+                    if (newConfig != nil && oldConfig != nil) ||
                         (newConfig != nil && oldConfig == nil) || (newConfig == nil && oldConfig != nil) {
                         for observer in observers {
                             observer.onChanged(key: configKey)
