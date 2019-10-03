@@ -21,6 +21,7 @@ This CocoaPods library helps you perform calculation.
   spec.author       = { "rajtharan" => "tharanit99@gmail.com" }
 
   spec.ios.deployment_target = "12.2"
+  spec.platform     = :ios, "10.0"
   spec.swift_version = "5.0"
 
   spec.source        = { :git => "https://github.com/rajtharan-g/CustomFit.git", :tag => "#{spec.version}" }
