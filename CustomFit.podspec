@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |spec|
 
-  spec.name         = "CustomFit"
-  spec.version      = "0.0.3"
+spec.name         = "CustomFit"
+  spec.version      = "0.0.4"
   spec.summary      = "A CocoaPods library written in Swift"
 
   spec.description  = <<-DESC
@@ -21,13 +21,11 @@ This CocoaPods library helps you perform calculation.
   spec.author       = { "rajtharan" => "tharanit99@gmail.com" }
 
   spec.ios.deployment_target = "12.2"
-#  spec.platform     = :ios, "10.0"
   spec.swift_version = "5.0"
 
-  spec.source        = { :git => "https://github.com/rajtharan-g/CustomFit.git", :commit => "f34565745afc63a1ba9e185bdc448e3ac563c0cc" }
+  spec.source        = { :git => "https://github.com/rajtharan-g/CustomFit.git", :tag => "0.0.4" }
   spec.source_files  = "CustomFit/*.swift"
   spec.static_framework = true
-  spec.dependency "Alamofire"
   spec.dependency "Firebase"
   spec.dependency "Firebase/Messaging"
   spec.dependency "Firebase/Auth"
