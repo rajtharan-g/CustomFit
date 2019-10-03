@@ -25,6 +25,6 @@ This CocoaPods library helps you perform calculation.
   spec.swift_version = "5.0"
 
   spec.source        = { :git => "https://github.com/rajtharan-g/CustomFit.git", :commit => "56257953c8b1acd77a96108b0673adaa595fe6e0" }
-  spec.source_files  = "CustomFit/Classes/**/*"
+  spec.source_files  = "CustomFit/*.swift"
 
 end
