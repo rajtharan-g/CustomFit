@@ -40,7 +40,7 @@ struct CFEvent: Codable {
     
 }
 
-class EventBuilder {
+public class EventBuilder {
     
     var eventId: String?
     var eventProperties: [String: JSON]?

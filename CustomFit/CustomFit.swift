@@ -18,7 +18,7 @@ public enum ConfigFetchState {
     case idle, inProgress
 }
 
-public class CustomFit: NSObject {
+open class CustomFit: NSObject {
     
     static var shared: CustomFit! = CustomFit()
     

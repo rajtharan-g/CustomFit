@@ -8,7 +8,7 @@
 
 import FirebaseMessaging
 
-class CFMessagingService: NSObject {
+open class CFMessagingService: NSObject {
     
     static let shared = CFMessagingService()
     
