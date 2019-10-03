@@ -20,34 +20,7 @@
 		85DCE7942346026800D30703 /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7902346026800D30703 /* Initialization.swift */; };
 		85DCE7952346026800D30703 /* Merging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7912346026800D30703 /* Merging.swift */; };
 		85DCE7962346026800D30703 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7922346026800D30703 /* JSON.swift */; };
-		85DCE7AD23461E9200D30703 /* CFPopUpHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE79B23461E8F00D30703 /* CFPopUpHandler.swift */; };
-		85DCE7AE23461E9200D30703 /* CFExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE79C23461E8F00D30703 /* CFExperience.swift */; };
-		85DCE7AF23461E9200D30703 /* CFExperienceBehaviourResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE79D23461E8F00D30703 /* CFExperienceBehaviourResponse.swift */; };
-		85DCE7B023461E9200D30703 /* CFSummaryExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE79E23461E8F00D30703 /* CFSummaryExporter.swift */; };
-		85DCE7B123461E9200D30703 /* CustomFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE79F23461E8F00D30703 /* CustomFit.swift */; };
-		85DCE7B223461E9200D30703 /* CFEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7A023461E8F00D30703 /* CFEvent.swift */; };
-		85DCE7B323461E9200D30703 /* CFMessagingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7A123461E9000D30703 /* CFMessagingService.swift */; };
-		85DCE7B423461E9200D30703 /* CFEventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7A223461E9000D30703 /* CFEventListView.swift */; };
-		85DCE7B523461E9200D30703 /* CFConfiguredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7A323461E9000D30703 /* CFConfiguredEvent.swift */; };
-		85DCE7B623461E9200D30703 /* CFGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7A423461E9000D30703 /* CFGender.swift */; };
-		85DCE7B723461E9200D30703 /* CFRegisterEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7A523461E9000D30703 /* CFRegisterEvents.swift */; };
-		85DCE7B823461E9200D30703 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7A623461E9000D30703 /* Extensions.swift */; };
-		85DCE7B923461E9200D30703 /* CFUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7A723461E9000D30703 /* CFUtil.swift */; };
-		85DCE7BA23461E9200D30703 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7A823461E9000D30703 /* APIClient.swift */; };
-		85DCE7BB23461E9200D30703 /* CFSDKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7A923461E9100D30703 /* CFSDKConfig.swift */; };
-		85DCE7BC23461E9200D30703 /* CFSharedPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7AA23461E9100D30703 /* CFSharedPreferences.swift */; };
-		85DCE7BD23461E9200D30703 /* CFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7AB23461E9100D30703 /* CFViewController.swift */; };
-		85DCE7BE23461E9200D30703 /* CFLifeCycleDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7AC23461E9100D30703 /* CFLifeCycleDetector.swift */; };
-		85DCE7C823461E9A00D30703 /* CFUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7BF23461E9800D30703 /* CFUser.swift */; };
-		85DCE7C923461E9A00D30703 /* CFConfigRequestSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7C023461E9800D30703 /* CFConfigRequestSummary.swift */; };
-		85DCE7CA23461E9A00D30703 /* CFGetUserConfigsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7C123461E9800D30703 /* CFGetUserConfigsResponse.swift */; };
-		85DCE7CB23461E9A00D30703 /* CFConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7C223461E9800D30703 /* CFConfig.swift */; };
-		85DCE7CC23461E9A00D30703 /* CFEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7C323461E9900D30703 /* CFEventType.swift */; };
-		85DCE7CD23461E9A00D30703 /* CFTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7C423461E9900D30703 /* CFTracker.swift */; };
-		85DCE7CE23461E9A00D30703 /* CFVariationDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7C523461E9900D30703 /* CFVariationDataType.swift */; };
-		85DCE7CF23461E9A00D30703 /* RetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7C623461E9A00D30703 /* RetryHandler.swift */; };
 		85DCE7D023461E9A00D30703 /* CFGeoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7C723461E9A00D30703 /* CFGeoType.swift */; };
-		85DCE7D223461E9F00D30703 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7D123461E9F00D30703 /* Queue.swift */; };
 		C60255501BD52F6CE9BB526A /* Pods_Example_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4E89E1A1A87DE56D81FE22 /* Pods_Example_ExampleUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,34 +55,7 @@
 		85DCE7902346026800D30703 /* Initialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
 		85DCE7912346026800D30703 /* Merging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Merging.swift; sourceTree = "<group>"; };
 		85DCE7922346026800D30703 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		85DCE79B23461E8F00D30703 /* CFPopUpHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFPopUpHandler.swift; sourceTree = "<group>"; };
-		85DCE79C23461E8F00D30703 /* CFExperience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFExperience.swift; sourceTree = "<group>"; };
-		85DCE79D23461E8F00D30703 /* CFExperienceBehaviourResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFExperienceBehaviourResponse.swift; sourceTree = "<group>"; };
-		85DCE79E23461E8F00D30703 /* CFSummaryExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFSummaryExporter.swift; sourceTree = "<group>"; };
-		85DCE79F23461E8F00D30703 /* CustomFit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFit.swift; sourceTree = "<group>"; };
-		85DCE7A023461E8F00D30703 /* CFEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFEvent.swift; sourceTree = "<group>"; };
-		85DCE7A123461E9000D30703 /* CFMessagingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFMessagingService.swift; sourceTree = "<group>"; };
-		85DCE7A223461E9000D30703 /* CFEventListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFEventListView.swift; sourceTree = "<group>"; };
-		85DCE7A323461E9000D30703 /* CFConfiguredEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFConfiguredEvent.swift; sourceTree = "<group>"; };
-		85DCE7A423461E9000D30703 /* CFGender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFGender.swift; sourceTree = "<group>"; };
-		85DCE7A523461E9000D30703 /* CFRegisterEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFRegisterEvents.swift; sourceTree = "<group>"; };
-		85DCE7A623461E9000D30703 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		85DCE7A723461E9000D30703 /* CFUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFUtil.swift; sourceTree = "<group>"; };
-		85DCE7A823461E9000D30703 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		85DCE7A923461E9100D30703 /* CFSDKConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFSDKConfig.swift; sourceTree = "<group>"; };
-		85DCE7AA23461E9100D30703 /* CFSharedPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFSharedPreferences.swift; sourceTree = "<group>"; };
-		85DCE7AB23461E9100D30703 /* CFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFViewController.swift; sourceTree = "<group>"; };
-		85DCE7AC23461E9100D30703 /* CFLifeCycleDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFLifeCycleDetector.swift; sourceTree = "<group>"; };
-		85DCE7BF23461E9800D30703 /* CFUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFUser.swift; sourceTree = "<group>"; };
-		85DCE7C023461E9800D30703 /* CFConfigRequestSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFConfigRequestSummary.swift; sourceTree = "<group>"; };
-		85DCE7C123461E9800D30703 /* CFGetUserConfigsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFGetUserConfigsResponse.swift; sourceTree = "<group>"; };
-		85DCE7C223461E9800D30703 /* CFConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFConfig.swift; sourceTree = "<group>"; };
-		85DCE7C323461E9900D30703 /* CFEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFEventType.swift; sourceTree = "<group>"; };
-		85DCE7C423461E9900D30703 /* CFTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFTracker.swift; sourceTree = "<group>"; };
-		85DCE7C523461E9900D30703 /* CFVariationDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFVariationDataType.swift; sourceTree = "<group>"; };
-		85DCE7C623461E9A00D30703 /* RetryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandler.swift; sourceTree = "<group>"; };
 		85DCE7C723461E9A00D30703 /* CFGeoType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CFGeoType.swift; path = "../../ios-sdk/CustomFit/CFGeoType.swift"; sourceTree = "<group>"; };
-		85DCE7D123461E9F00D30703 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		947C23F5D49A9DF5C86DCEBA /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A09BE3D40CC4D0FCB2E62D6A /* Pods_CustomFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A7CF3FC4EF16C14FC20125 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,38 +117,11 @@
 		85C5F7AF2345F6AF006E9787 /* CustomFit */ = {
 			isa = PBXGroup;
 			children = (
+				85DCE7C723461E9A00D30703 /* CFGeoType.swift */,
 				85DCE7902346026800D30703 /* Initialization.swift */,
 				85DCE78F2346026800D30703 /* Querying.swift */,
 				85DCE7922346026800D30703 /* JSON.swift */,
 				85DCE7912346026800D30703 /* Merging.swift */,
-				85DCE7A823461E9000D30703 /* APIClient.swift */,
-				85DCE7A323461E9000D30703 /* CFConfiguredEvent.swift */,
-				85DCE7A023461E8F00D30703 /* CFEvent.swift */,
-				85DCE7D123461E9F00D30703 /* Queue.swift */,
-				85DCE7A223461E9000D30703 /* CFEventListView.swift */,
-				85DCE79C23461E8F00D30703 /* CFExperience.swift */,
-				85DCE79D23461E8F00D30703 /* CFExperienceBehaviourResponse.swift */,
-				85DCE7A423461E9000D30703 /* CFGender.swift */,
-				85DCE7C523461E9900D30703 /* CFVariationDataType.swift */,
-				85DCE7C423461E9900D30703 /* CFTracker.swift */,
-				85DCE7C223461E9800D30703 /* CFConfig.swift */,
-				85DCE7C123461E9800D30703 /* CFGetUserConfigsResponse.swift */,
-				85DCE7C723461E9A00D30703 /* CFGeoType.swift */,
-				85DCE7BF23461E9800D30703 /* CFUser.swift */,
-				85DCE7C023461E9800D30703 /* CFConfigRequestSummary.swift */,
-				85DCE7C323461E9900D30703 /* CFEventType.swift */,
-				85DCE7C623461E9A00D30703 /* RetryHandler.swift */,
-				85DCE7AC23461E9100D30703 /* CFLifeCycleDetector.swift */,
-				85DCE7A123461E9000D30703 /* CFMessagingService.swift */,
-				85DCE79B23461E8F00D30703 /* CFPopUpHandler.swift */,
-				85DCE7A523461E9000D30703 /* CFRegisterEvents.swift */,
-				85DCE7A923461E9100D30703 /* CFSDKConfig.swift */,
-				85DCE7AA23461E9100D30703 /* CFSharedPreferences.swift */,
-				85DCE79E23461E8F00D30703 /* CFSummaryExporter.swift */,
-				85DCE7A723461E9000D30703 /* CFUtil.swift */,
-				85DCE7AB23461E9100D30703 /* CFViewController.swift */,
-				85DCE79F23461E8F00D30703 /* CustomFit.swift */,
-				85DCE7A623461E9000D30703 /* Extensions.swift */,
 				85C5F7B02345F6AF006E9787 /* CustomFit.h */,
 				85C5F7B12345F6AF006E9787 /* Info.plist */,
 			);
@@ -251,7 +170,6 @@
 				B3892A9FDE42E6E61F315803 /* Pods-Example-ExampleUITests.debug.xcconfig */,
 				F6D9E0618571791353F0EE6E /* Pods-Example-ExampleUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -468,38 +386,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85DCE7B623461E9200D30703 /* CFGender.swift in Sources */,
 				85DCE7932346026800D30703 /* Querying.swift in Sources */,
-				85DCE7B523461E9200D30703 /* CFConfiguredEvent.swift in Sources */,
-				85DCE7B223461E9200D30703 /* CFEvent.swift in Sources */,
-				85DCE7B723461E9200D30703 /* CFRegisterEvents.swift in Sources */,
-				85DCE7CD23461E9A00D30703 /* CFTracker.swift in Sources */,
-				85DCE7BB23461E9200D30703 /* CFSDKConfig.swift in Sources */,
-				85DCE7B423461E9200D30703 /* CFEventListView.swift in Sources */,
-				85DCE7CB23461E9A00D30703 /* CFConfig.swift in Sources */,
-				85DCE7BA23461E9200D30703 /* APIClient.swift in Sources */,
-				85DCE7B923461E9200D30703 /* CFUtil.swift in Sources */,
-				85DCE7CA23461E9A00D30703 /* CFGetUserConfigsResponse.swift in Sources */,
-				85DCE7BD23461E9200D30703 /* CFViewController.swift in Sources */,
 				85DCE7942346026800D30703 /* Initialization.swift in Sources */,
-				85DCE7CC23461E9A00D30703 /* CFEventType.swift in Sources */,
-				85DCE7AE23461E9200D30703 /* CFExperience.swift in Sources */,
 				85DCE7D023461E9A00D30703 /* CFGeoType.swift in Sources */,
-				85DCE7BE23461E9200D30703 /* CFLifeCycleDetector.swift in Sources */,
-				85DCE7BC23461E9200D30703 /* CFSharedPreferences.swift in Sources */,
-				85DCE7AF23461E9200D30703 /* CFExperienceBehaviourResponse.swift in Sources */,
-				85DCE7AD23461E9200D30703 /* CFPopUpHandler.swift in Sources */,
-				85DCE7C923461E9A00D30703 /* CFConfigRequestSummary.swift in Sources */,
-				85DCE7CF23461E9A00D30703 /* RetryHandler.swift in Sources */,
 				85DCE7952346026800D30703 /* Merging.swift in Sources */,
-				85DCE7D223461E9F00D30703 /* Queue.swift in Sources */,
-				85DCE7B023461E9200D30703 /* CFSummaryExporter.swift in Sources */,
-				85DCE7CE23461E9A00D30703 /* CFVariationDataType.swift in Sources */,
-				85DCE7B123461E9200D30703 /* CustomFit.swift in Sources */,
-				85DCE7B823461E9200D30703 /* Extensions.swift in Sources */,
 				85DCE7962346026800D30703 /* JSON.swift in Sources */,
-				85DCE7B323461E9200D30703 /* CFMessagingService.swift in Sources */,
-				85DCE7C823461E9A00D30703 /* CFUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
