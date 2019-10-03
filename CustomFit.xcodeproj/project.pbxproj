@@ -14,6 +14,11 @@
 		85C5F7C62345F75B006E9787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C5F7C52345F75B006E9787 /* Assets.xcassets */; };
 		85C5F7C92345F75B006E9787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C5F7C72345F75B006E9787 /* LaunchScreen.storyboard */; };
 		85C5F7D42345F75C006E9787 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C5F7D32345F75C006E9787 /* ExampleUITests.swift */; };
+		85DCE7932346026800D30703 /* Querying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE78F2346026800D30703 /* Querying.swift */; };
+		85DCE7942346026800D30703 /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7902346026800D30703 /* Initialization.swift */; };
+		85DCE7952346026800D30703 /* Merging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7912346026800D30703 /* Merging.swift */; };
+		85DCE7962346026800D30703 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7922346026800D30703 /* JSON.swift */; };
+		85DCE7982346029600D30703 /* CFGeoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCE7972346029600D30703 /* CFGeoType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,11 @@
 		85C5F7CF2345F75C006E9787 /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C5F7D32345F75C006E9787 /* ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUITests.swift; sourceTree = "<group>"; };
 		85C5F7D52345F75C006E9787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85DCE78F2346026800D30703 /* Querying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Querying.swift; sourceTree = "<group>"; };
+		85DCE7902346026800D30703 /* Initialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
+		85DCE7912346026800D30703 /* Merging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Merging.swift; sourceTree = "<group>"; };
+		85DCE7922346026800D30703 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		85DCE7972346029600D30703 /* CFGeoType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFGeoType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,11 @@
 		85C5F7AF2345F6AF006E9787 /* CustomFit */ = {
 			isa = PBXGroup;
 			children = (
+				85DCE7902346026800D30703 /* Initialization.swift */,
+				85DCE78F2346026800D30703 /* Querying.swift */,
+				85DCE7922346026800D30703 /* JSON.swift */,
+				85DCE7912346026800D30703 /* Merging.swift */,
+				85DCE7972346029600D30703 /* CFGeoType.swift */,
 				85C5F7B02345F6AF006E9787 /* CustomFit.h */,
 				85C5F7B12345F6AF006E9787 /* Info.plist */,
 			);
@@ -259,6 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85DCE7932346026800D30703 /* Querying.swift in Sources */,
+				85DCE7942346026800D30703 /* Initialization.swift in Sources */,
+				85DCE7982346029600D30703 /* CFGeoType.swift in Sources */,
+				85DCE7952346026800D30703 /* Merging.swift in Sources */,
+				85DCE7962346026800D30703 /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
