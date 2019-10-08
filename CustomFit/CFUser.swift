@@ -102,7 +102,7 @@ public struct CFUser: Codable {
         }
     }
     
-    mutating func clear() {
+    mutating public func clear() {
         self.id = nil
         self.anonymous = nil
         self.ip = nil
@@ -189,7 +189,7 @@ public class UserBuilder: NSObject {
         self.defaultLocation = user.defaultLocation
     }
     
-    func id(s: String) -> UserBuilder {
+    public func id(s: String) -> UserBuilder {
         self.id = s
         return self
     }
@@ -199,7 +199,7 @@ public class UserBuilder: NSObject {
      * Default value is false.
      * The anonymous user does not get created on CustomFit.ai
      */
-    func anonymous(s: Bool) -> UserBuilder {
+    public func anonymous(s: Bool) -> UserBuilder {
         self.anonymous = s
         return self
     }
@@ -209,7 +209,7 @@ public class UserBuilder: NSObject {
      * @param ip Ip address of user
      * @return the builder
      */
-    func ip(ip: String) -> UserBuilder {
+    public func ip(ip: String) -> UserBuilder {
         self.ip = ip
         return self
     }
@@ -220,7 +220,7 @@ public class UserBuilder: NSObject {
      * @param ip - Ip address of user
      * @return the builder
      */
-    func privateIp(ip: String) -> UserBuilder {
+    public func privateIp(ip: String) -> UserBuilder {
         self.privatePropertyNames?.properties?.append(IP)
         return self.ip(ip: ip)
     }
@@ -230,7 +230,7 @@ public class UserBuilder: NSObject {
      * @param country Country of user
      * @return the builder
      */
-    func country(country: String) -> UserBuilder {
+    public func country(country: String) -> UserBuilder {
         self.country = country
         return self
     }
@@ -241,7 +241,7 @@ public class UserBuilder: NSObject {
      * @param country Country of user.
      * @return the builder
      */
-    func privateCountry(country: String) -> UserBuilder {
+    public func privateCountry(country: String) -> UserBuilder {
         self.privatePropertyNames?.fields?.append(COUNTRY)
         return self.country(country: country)
     }
@@ -252,7 +252,7 @@ public class UserBuilder: NSObject {
      *                        i.e., latitude and longitude
      * @return the builder
      */
-    func defaultLocation(defaultLocation: CFGeoType) -> UserBuilder {
+    public func defaultLocation(defaultLocation: CFGeoType) -> UserBuilder {
         self.defaultLocation = defaultLocation
         return self
     }
@@ -264,7 +264,7 @@ public class UserBuilder: NSObject {
      *                        i.e., latitude and longitude
      * @return the builder
      */
-    func privateDefaultLocation(defaultLocation: CFGeoType) -> UserBuilder {
+    public func privateDefaultLocation(defaultLocation: CFGeoType) -> UserBuilder {
         self.privatePropertyNames?.fields?.append(DEFAULT_LOCATION)
         return self.defaultLocation(defaultLocation: defaultLocation)
     }
@@ -274,7 +274,7 @@ public class UserBuilder: NSObject {
      * @param timeZone Timezone of user
      * @return the builder
      */
-    func timeZone(timeZone: String) -> UserBuilder {
+    public func timeZone(timeZone: String) -> UserBuilder {
         self.timeZone = timeZone
         return self
     }
@@ -285,7 +285,7 @@ public class UserBuilder: NSObject {
      * @param timeZone Timezone of user.
      * @return the builder
      */
-    func privateTimeZone(timeZone: String) -> UserBuilder {
+    public func privateTimeZone(timeZone: String) -> UserBuilder {
         self.privatePropertyNames?.fields?.append(TIME_ZONE)
         return self.timeZone(timeZone: timeZone)
     }
@@ -296,7 +296,7 @@ public class UserBuilder: NSObject {
      * @return the builder
      *
      */
-    func gender(gender: String?) -> UserBuilder {
+    public func gender(gender: String?) -> UserBuilder {
         guard let gender = gender else {
             return self
         }
@@ -316,7 +316,7 @@ public class UserBuilder: NSObject {
      * @param gender Gender of user
      * @return the builder
      */
-    func privateGender(gender: String) -> UserBuilder {
+    public func privateGender(gender: String) -> UserBuilder {
         self.privatePropertyNames?.fields?.append(GENDER)
         return self.gender(gender: gender)
     }
@@ -327,7 +327,7 @@ public class UserBuilder: NSObject {
      * @return the builder
      *
      */
-    func phoneNumber(countryCode: String, phoneNumber: String) -> UserBuilder {
+    public func phoneNumber(countryCode: String, phoneNumber: String) -> UserBuilder {
         self.countryCode = countryCode
         self.phoneNumber = phoneNumber
         return self
@@ -340,7 +340,7 @@ public class UserBuilder: NSObject {
      * @param phoneNumber Phone number of user
      * @return the builder
      */
-    func privatePhoneNumber(countryCode: String, phoneNumber: String) -> UserBuilder {
+    public func privatePhoneNumber(countryCode: String, phoneNumber: String) -> UserBuilder {
         self.privatePropertyNames?.fields?.append(PHONE_NUMBER)
         self.privatePropertyNames?.fields?.append(COUNTRY_CODE)
         return self.phoneNumber(countryCode: countryCode, phoneNumber: phoneNumber)
@@ -352,7 +352,7 @@ public class UserBuilder: NSObject {
      * @return the builder
      *
      */
-    func tags(s: [String]) -> UserBuilder {
+    public func tags(s: [String]) -> UserBuilder {
         self.tags = s
         return self
     }
@@ -364,7 +364,7 @@ public class UserBuilder: NSObject {
      * @return the builder
      *
      */
-    func privateTags(s: [String]) -> UserBuilder {
+    public func privateTags(s: [String]) -> UserBuilder {
         self.privatePropertyNames?.tags = s
         return self
     }
@@ -374,7 +374,7 @@ public class UserBuilder: NSObject {
      * @param firstName First name of user
      * @return the builder
      */
-    func firstName(firstName: String) -> UserBuilder {
+    public func firstName(firstName: String) -> UserBuilder {
         self.firstName = firstName
         return self
     }
@@ -385,7 +385,7 @@ public class UserBuilder: NSObject {
      * @param firstName First name of user
      * @return the builder
      */
-    func privateFirstName(firstName: String) -> UserBuilder {
+    public func privateFirstName(firstName: String) -> UserBuilder {
         self.privatePropertyNames?.fields?.append(FIRST_NAME)
         return self.firstName(firstName: firstName)
     }
@@ -395,7 +395,7 @@ public class UserBuilder: NSObject {
      * @param lastName Last name of user
      * @return the builder
      */
-    func lastName(lastName: String) -> UserBuilder {
+    public func lastName(lastName: String) -> UserBuilder {
         self.lastName = lastName
         return self
     }
@@ -406,7 +406,7 @@ public class UserBuilder: NSObject {
      * @param lastName Last name of user
      * @return the builder
      */
-    func privateLastName(lastName: String) -> UserBuilder {
+    public func privateLastName(lastName: String) -> UserBuilder {
         self.privatePropertyNames?.fields?.append(LAST_NAME)
         return self.lastName(lastName: lastName)
     }
@@ -416,7 +416,7 @@ public class UserBuilder: NSObject {
      * @param dob Date of birth of user
      * @return the builder
      */
-    func dob(dob: Date) -> UserBuilder {
+    public func dob(dob: Date) -> UserBuilder {
         self.dob = dob
         return self
     }
@@ -427,7 +427,7 @@ public class UserBuilder: NSObject {
      * @param dob Date of birth of user
      * @return the builder
      */
-    func privateDoB(dob: Date) -> UserBuilder {
+    public func privateDoB(dob: Date) -> UserBuilder {
         self.privatePropertyNames?.fields?.append(DOB)
         return self.dob(dob: dob)
     }
@@ -437,7 +437,7 @@ public class UserBuilder: NSObject {
      * @param email Email of user
      * @return the builder
      */
-    func email(email: String) -> UserBuilder {
+    public func email(email: String) -> UserBuilder {
         self.email = email
         return self
     }
@@ -448,7 +448,7 @@ public class UserBuilder: NSObject {
      * @param email Email of user
      * @return the builder
      */
-    func privateEmail(email: String) -> UserBuilder {
+    public func privateEmail(email: String) -> UserBuilder {
         self.privatePropertyNames?.fields?.append(EMAIL)
         return self.email(email: email)
     }
@@ -460,7 +460,7 @@ public class UserBuilder: NSObject {
      * @param value Value for custom string property
      * @return the builder
      */
-    func customProperty(key: String, value: String) -> UserBuilder {
+    public func customProperty(key: String, value: String) -> UserBuilder {
         return customProperty(k: key, v: JSON(stringLiteral: value))
     }
     
@@ -471,7 +471,7 @@ public class UserBuilder: NSObject {
      * @param value Value for custom string property
      * @return the builder
      */
-    func privateCustomProperty(key: String, value: String) -> UserBuilder {
+    public func privateCustomProperty(key: String, value: String) -> UserBuilder {
         self.privatePropertyNames?.properties?.append(key)
         return self.customProperty(key: key, value: value)
     }
@@ -483,7 +483,7 @@ public class UserBuilder: NSObject {
      * @param value Value for custom date property
      * @return the builder
      */
-    func customProperty(key: String, value: Date) -> UserBuilder {
+    public func customProperty(key: String, value: Date) -> UserBuilder {
         return customProperty(k: key, v: JSON(stringLiteral: CFUtil.getSupportedDateFormat().string(from: value)))
     }
     
@@ -494,7 +494,7 @@ public class UserBuilder: NSObject {
      * @param value Value for custom date property
      * @return the builder
      */
-    func privateCustomProperty(key: String, value: Date) -> UserBuilder {
+    public func privateCustomProperty(key: String, value: Date) -> UserBuilder {
         self.privatePropertyNames?.properties?.append(key)
         return self.customProperty(key: key, value: value)
     }
@@ -506,7 +506,7 @@ public class UserBuilder: NSObject {
      * @param value Value for custom geo pointproperty
      * @return the builder
      */
-    func customProperty(key: String, value: CFGeoType) -> UserBuilder {
+    public func customProperty(key: String, value: CFGeoType) -> UserBuilder {
         return customProperty(k: key, v: JSON(dictionaryLiteral: value))
     }
     
@@ -517,7 +517,7 @@ public class UserBuilder: NSObject {
      * @param value Value for custom geo pointproperty
      * @return the builder
      */
-    func privateCustomProperty(key: String, value: CFGeoType) -> UserBuilder {
+    public func privateCustomProperty(key: String, value: CFGeoType) -> UserBuilder {
         self.privatePropertyNames?.properties?.append(key)
         return customProperty(key: key, value: value)
     }
@@ -538,7 +538,7 @@ public class UserBuilder: NSObject {
      * @return the builder
      */
     
-    func customProperty(key: String, value: Int64) -> UserBuilder {
+    public func customProperty(key: String, value: Int64) -> UserBuilder {
         return self.customProperty(k: key, v: JSON(integerLiteral: Int(value)))
     }
     
@@ -549,7 +549,7 @@ public class UserBuilder: NSObject {
      * @param value Value for number custom property
      * @return the builder
      */
-    func privateCustomProperty(key: String, value: Int64) -> UserBuilder {
+    public func privateCustomProperty(key: String, value: Int64) -> UserBuilder {
         self.privatePropertyNames?.properties?.append(key)
         return customProperty(key: key, value: value)
     }
@@ -561,7 +561,7 @@ public class UserBuilder: NSObject {
      * @param value Value for custom boolean property
      * @return the builder
      */
-    func customProperty(key: String, value: Bool) -> UserBuilder {
+    public func customProperty(key: String, value: Bool) -> UserBuilder {
         return customProperty(k: key, v: JSON(booleanLiteral: value))
     }
     
@@ -573,7 +573,7 @@ public class UserBuilder: NSObject {
      * @param value Value for custom boolean property
      * @return the builder
      */
-    func privateCustomProperty(key: String, value: Bool) -> UserBuilder {
+    public func privateCustomProperty(key: String, value: Bool) -> UserBuilder {
         self.privatePropertyNames?.properties?.append(key)
         return self.customProperty(key: key, value: value)
     }
@@ -585,7 +585,7 @@ public class UserBuilder: NSObject {
      * @param values List of values for custom list string property
      * @return the builder
      */
-    func customPropertyString(key: String, values: [String]) -> UserBuilder {
+    public func customPropertyString(key: String, values: [String]) -> UserBuilder {
         var array: [JSON] = []
         for value in values {
             array.append(JSON(stringLiteral: value))
@@ -600,7 +600,7 @@ public class UserBuilder: NSObject {
      * @param values List of values for custom list string property
      * @return the builder
      */
-    func privateCustomPropertyString(key: String, values: [String]) -> UserBuilder {
+    public func privateCustomPropertyString(key: String, values: [String]) -> UserBuilder {
         self.privatePropertyNames?.properties?.append(key)
         return customPropertyString(key: key, values: values)
     }
@@ -623,7 +623,7 @@ public class UserBuilder: NSObject {
      * @param values Value for custom list number property
      * @return the builder
      */
-    func customPropertyNumber(key: String, values: [Int64]) -> UserBuilder {
+    public func customPropertyNumber(key: String, values: [Int64]) -> UserBuilder {
         return self.customPropertyNumber(k: key, vs: values)
     }
     
@@ -634,7 +634,7 @@ public class UserBuilder: NSObject {
      * @param values Value for custom list number property
      * @return the builder
      */
-    func privateCustomPropertyNumber(key: String, values: [Int64]) -> UserBuilder {
+    public func privateCustomPropertyNumber(key: String, values: [Int64]) -> UserBuilder {
         self.privatePropertyNames?.properties?.append(key)
         return self.customPropertyNumber(key: key, values: values)
     }
@@ -657,7 +657,7 @@ public class UserBuilder: NSObject {
      * @param values Value for custom list date property
      * @return the builder
      */
-    func customPropertyDate(key: String, values: [Date]) -> UserBuilder {
+    public func customPropertyDate(key: String, values: [Date]) -> UserBuilder {
         return customPropertyDate(k: key, vs: values)
     }
     
@@ -669,12 +669,12 @@ public class UserBuilder: NSObject {
      * @param values Value for custom list date property
      * @return the builder
      */
-    func privateCustomPropertyDate(key: String, values: [Date]) -> UserBuilder {
+    public func privateCustomPropertyDate(key: String, values: [Date]) -> UserBuilder {
         self.privatePropertyNames?.properties?.append(key)
         return customPropertyDate(key: key, values: values)
     }
     
-    func customPropertyDate(k: String, vs: [Date?]) -> UserBuilder {
+    public func customPropertyDate(k: String, vs: [Date?]) -> UserBuilder {
         var array = Array<JSON>()
         for v in vs {
             if let v = v {
@@ -686,7 +686,7 @@ public class UserBuilder: NSObject {
         return self
     }
     
-    func customPropertyGeoPoint(k: String, vs: [CFGeoType?]) -> UserBuilder {
+    public func customPropertyGeoPoint(k: String, vs: [CFGeoType?]) -> UserBuilder {
         var array = Array<JSON>()
         for v in vs {
             if let v = v {

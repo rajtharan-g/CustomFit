@@ -20,11 +20,11 @@ open class CFMessagingService: NSObject {
 
 extension CFMessagingService: MessagingDelegate {
     
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+    public func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         
     }
     
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+    public func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
         if remoteMessage.appData.count > 0 && (CustomFit.shared.isCFMessage(message: remoteMessage.appData as? [String : String])) {
             CustomFit.shared.handleCFMessage(app: UIApplication.shared, message: remoteMessage.appData as! [String : String])
         }
