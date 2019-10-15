@@ -18,7 +18,7 @@ This CocoaPods library helps you perform calculation.
 
   spec.homepage     = "https://github.com/rajtharan-g/CustomFit"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.author       = { "rajtharan" => "tharanit99@gmail.com" }
+  spec.author       = { "rajtharan" => "rajtharan@squareoffnow.com" }
 
   spec.ios.deployment_target = "9.0"
   spec.swift_version = "5.0"
