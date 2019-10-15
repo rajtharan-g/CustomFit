@@ -22,6 +22,11 @@ class APIClient {
     init() {
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = headers
+        if #available(iOS 11.0, *) {
+            configuration.waitsForConnectivity = true
+        } else {
+            // Fallback on earlier versions
+        }
         sessionManager = Alamofire.SessionManager(configuration: configuration)
         sessionManager.retrier = RetryHandler()
         sessionManager.adapter = RetryHandler()
