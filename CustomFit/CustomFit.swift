@@ -551,13 +551,16 @@ extension CustomFit {
     }
 }
 
+@available(iOS 10.0, *)
 extension CustomFit: UNUserNotificationCenterDelegate {
     //MARK: - UNUserNotificationCenterDelegate methods
     
+    @available(iOS 10.0, *)
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         completionHandler()
     }
     
+    @available(iOS 10.0, *)
     public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([])
     }
