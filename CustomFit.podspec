@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
 spec.name         = "CustomFit"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "A CocoaPods library written in Swift"
 
   spec.description  = <<-DESC
@@ -23,7 +23,7 @@ This CocoaPods library helps you perform calculation.
   spec.ios.deployment_target = "9.0"
   spec.swift_version = "5.0"
 
-  spec.source        = { :git => 'https://github.com/rajtharan-g/CustomFit.git', :tag => '0.0.1' }
+  spec.source        = { :git => 'https://github.com/rajtharan-g/CustomFit.git', :tag => '0.0.2' }
   spec.source_files  = "CustomFit/*.swift"
   spec.static_framework = true
   spec.dependency "Firebase"
