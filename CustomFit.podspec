@@ -26,9 +26,7 @@ This CocoaPods library helps you perform calculation.
   spec.source        = { :git => 'https://github.com/rajtharan-g/CustomFit.git', :tag => '0.0.2' }
   spec.source_files  = "CustomFit/*.swift"
   spec.static_framework = true
-  spec.dependency "Firebase"
   spec.dependency "Firebase/Messaging"
-  spec.dependency "Firebase/Auth"
   spec.dependency "Alamofire"
 
 end
