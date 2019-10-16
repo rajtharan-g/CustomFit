@@ -16,6 +16,7 @@ class APIClient {
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
     private var sessionManager: SessionManager!
+    var pendingRequests: [Request] = []
     let headers: HTTPHeaders = ["Authorization": "Bearer \(CFSharedPreferences.shared.getClientKey()!)"]
     typealias HTTPHeaders = [String: String]
     
@@ -35,9 +36,9 @@ class APIClient {
     func getSdkConfigs(completion: @escaping ([String: String]?, Error?) -> Void) {
         
         if let url = URL(string: "\(BASE_URL)/v1/sdk/configs") {
-            CustomFit.shared.configFetchState = .inProgress
+            CustomFit.shared().configFetchState = .inProgress
             sessionManager.request(URLRequest(url: url)).validate().responseJSON { response in
-                CustomFit.shared.configFetchState = .idle
+                CustomFit.shared().configFetchState = .idle
                 guard let data = response.data else {
                     print(self.TAG, "Error in getConfigs: No data to decode \(response.error?.localizedDescription ?? "")")
                     completion(nil, response.error)
@@ -59,9 +60,9 @@ class APIClient {
                 do {
                     if let user = try JSONSerialization.jsonObject(with: encodedObject, options: []) as? [String: Any] {
                         let userJson = ["user": user]
-                        CustomFit.shared.configFetchState = .inProgress
+                        CustomFit.shared().configFetchState = .inProgress
                         postRequest(url: url, body: userJson, shouldParse: true) { data, response, error in
-                            CustomFit.shared.configFetchState = .idle
+                            CustomFit.shared().configFetchState = .idle
                             guard let data = data else {
                                 print(self.TAG, "Error in getConfigs: No data to decode \(error?.localizedDescription ?? "")")
                                 completion(nil, error)
@@ -92,9 +93,9 @@ class APIClient {
             jsonArr.append(device_customer_id)
             add_devices["add_devices"] = jsonArr
             add_devices["anonymous"] = anonymous
-            CustomFit.shared.configFetchState = .inProgress
+            CustomFit.shared().configFetchState = .inProgress
             postRequest(url: url, body: add_devices, shouldParse: false) { data, response, error in
-                CustomFit.shared.configFetchState = .idle
+                CustomFit.shared().configFetchState = .idle
                 completion(cfUserId, instanceId, error)
             }
         }
@@ -106,9 +107,9 @@ class APIClient {
             if let encodedObject = try? encoder.encode(registerEvents) {
                 do {
                     if let events = try JSONSerialization.jsonObject(with: encodedObject, options: []) as? [String: Any] {
-                        CustomFit.shared.configFetchState = .inProgress
+                        CustomFit.shared().configFetchState = .inProgress
                         postRequest(url: url, body: events, shouldParse: false) { data, response, error in
-                            CustomFit.shared.configFetchState = .idle
+                            CustomFit.shared().configFetchState = .idle
                             if let error = error {
                                 print(self.TAG, "Error in trackEvents: \(error.code) \(error.localizedDescription)")
                                 completion(error)
@@ -129,9 +130,9 @@ class APIClient {
             if let encodedObject = try? encoder.encode(events) {
                 do {
                     if let events = try JSONSerialization.jsonObject(with: encodedObject, options: []) as? [Any] {
-                        CustomFit.shared.configFetchState = .inProgress
+                        CustomFit.shared().configFetchState = .inProgress
                         postRequest(url: url, body: events, shouldParse: false) { data, response, error in
-                            CustomFit.shared.configFetchState = .idle
+                            CustomFit.shared().configFetchState = .idle
                             if let error = error {
                                 print(self.TAG, "Error in pushConfigRequestSummary: \(error.code) \(error.localizedDescription)")
                                 completion(error)
@@ -150,9 +151,9 @@ class APIClient {
     func getConfiguredEvents(completion: @escaping ([String: CFConfiguredEvent]?, Error?) -> Void) {
         
         if let url = URL(string: "\(BASE_URL)/v1/events") {
-            CustomFit.shared.configFetchState = .inProgress
+            CustomFit.shared().configFetchState = .inProgress
             sessionManager.request(URLRequest(url: url)).validate().responseJSON { response in
-                CustomFit.shared.configFetchState = .idle
+                CustomFit.shared().configFetchState = .idle
                 guard let data = response.data else {
                     print(self.TAG, "Error in getConfiguredEvents: No data to decode \(response.error?.localizedDescription ?? "")")
                     completion(nil, response.error)

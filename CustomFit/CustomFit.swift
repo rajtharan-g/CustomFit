@@ -20,9 +20,7 @@ public enum ConfigFetchState {
 
 public class CustomFit: NSObject {
     
-    public static var shared: CustomFit! = CustomFit()
-    
-    private var application: UIApplication? = nil
+    private var application: UIApplication?
     private var deviceInstanceId: String? = ""
     private var configChangeObservers: Dictionary<String, Array<CFConfigChangeObserver>>? = Dictionary()
     public var configFetchState: ConfigFetchState!
@@ -30,12 +28,12 @@ public class CustomFit: NSObject {
     private let REFRESH_CONFIG_MSG_TYPE: String = "refresh_configs"
     private let CF_MSG_TYPE: String = "customfit_message_type"
     private let CF_MAX_RESYNC_TIME_STR: String = "max_resync_time"
-    private var fetchConfigWorkRequest: DispatchWorkItem? = nil
-    private var addDeviceRequest: DispatchWorkItem? = nil
+    private var fetchConfigWorkRequest: DispatchWorkItem?
+    private var addDeviceRequest: DispatchWorkItem?
     private var sharedPrefSdkConfig: String!
     public var clientKey: String?
     public var user: CFUser?
-    private var periodicWorkRequest: DispatchWorkItem? = nil
+    private var periodicWorkRequest: DispatchWorkItem?
     private let WORKER_NAME: String = "CUSTOMFIT_CONFIG_FETCHER"
     private let ADD_DEVICE_WORKER_NAME: String = "CUSTOMFIT_ADD_DEVICE_WORKER"
     private let PERIODIC_EVENT_PROCESSOR_WORKER_NAME: String =  "CUSTOMFIT_PERIODIC_EVENT_PROCESSOR_WORKER_NAME"
@@ -46,10 +44,17 @@ public class CustomFit: NSObject {
     private override init() {
         super.init()
     }
+    
+    static var _shared: CustomFit = {
+        var shared = CustomFit()
+        return shared
+    }()
+    
+    public class func shared() -> CustomFit {
+        return _shared
+    }
 
-    public init(app: UIApplication, key: String, cfUser: CFUser) {
-        super.init()
-        CustomFit.shared = self
+    public func initialize(app: UIApplication, key: String, cfUser: CFUser) {
         application = app
         device_registered = false
         clientKey = key
@@ -73,7 +78,7 @@ public class CustomFit: NSObject {
         schedulePeriodicEventProcessorJob()
         _ = CFLifeCycleDetector.shared
     }
-    //
+    
     public func reset() {
         configChangeObservers = nil
         cancelFetchConfigWorkRequest()
@@ -87,29 +92,28 @@ public class CustomFit: NSObject {
         periodicWorkRequest = nil
         configFetchState = ConfigFetchState.idle
     }
-    //
+    
     private func cancelFetchConfigWorkRequest() {
         if let workRequest = fetchConfigWorkRequest {
             workRequest.cancel()
         }
     }
-    //
+    
     private func cancelAddDeviceWorkRequest() {
         if let addDeviceRequest = addDeviceRequest {
             addDeviceRequest.cancel()
         }
     }
-    //
+    
     private func cancelPeriodicWorkRequest() {
         if let periodicWorkRequest = periodicWorkRequest {
             periodicWorkRequest.cancel()
         }
     }
-    //
+    
     private func scheduleFetchConfigJobIfNeeded() {
-        let currentTime = Date()
         let configNextFetchedTime = CFSharedPreferences.shared.getConfigNextFetchDateTime()
-        if configFetchState != ConfigFetchState.inProgress && (getConfigs() == nil || configNextFetchedTime != nil || currentTime.seconds(from: configNextFetchedTime!) >= 0) {
+        if configFetchState != ConfigFetchState.inProgress && (getConfigs() == nil || configNextFetchedTime != nil || Date().seconds(from: configNextFetchedTime!) >= 0) {
             scheduleFetchConfigJob(delay: 0)
         } 
     }
@@ -120,7 +124,7 @@ public class CustomFit: NSObject {
         scheduleFetchConfigJobIfNeeded()
         CFTracker.shared.flushEvents()
     }
-    //
+    
     public func scheduleFetchConfigJob(delay: Int) {
         DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + TimeInterval(delay)) {
             if self.configFetchState != ConfigFetchState.inProgress {
@@ -129,7 +133,7 @@ public class CustomFit: NSObject {
                 self.fetchConfigWorkRequest = DispatchWorkItem {
                     self.fetchConfigs(completion: { (isSuccess) in
                         if isSuccess {
-                            // Success
+                             //Success
                         }
                     })
                 }
@@ -137,12 +141,12 @@ public class CustomFit: NSObject {
             }
         }
     }
-    //
+    
     func fetchConfigs(completion: @escaping (Bool) -> Void) {
         APIClient.shared.getConfigs(cfUser: CFSharedPreferences.shared.getUser()!) { (cfGetUserConfigsResponse, error) in
             if let newConfigMap = cfGetUserConfigsResponse?.configs {
                 if let oldConfigMap = CFSharedPreferences.shared.getConfigs() {
-                    if (newConfigMap != oldConfigMap) { // Condition for dictionary comparison between old and new
+                    if (newConfigMap != oldConfigMap) {  //Condition for dictionary comparison between old and new
                         CFSharedPreferences.shared.setConfigs(configList: newConfigMap)
                         self.notifyObservers(newConfigs: newConfigMap, oldConfigs: oldConfigMap)
                     } else {
@@ -206,7 +210,7 @@ public class CustomFit: NSObject {
         CFSharedPreferences.shared.initFromCache()
         registerDevice(instanceId: instanceId)
     }
-    //
+    
     public func registerDevice(instanceId: String?) {
         deviceInstanceId = instanceId
         if(CFSharedPreferences.shared.getUser() == nil || instanceId == nil) {
@@ -273,7 +277,7 @@ public class CustomFit: NSObject {
     public func showPopup(viiewController: UIViewController) {
         // Show alert here
     }
-    //
+    
     public func getUser() -> CFUser? {
         return CFSharedPreferences.shared.getUser()
     }
@@ -460,7 +464,7 @@ public class CustomFit: NSObject {
     class public func getUniqueUserInstanceId() -> String {
         return UUID().uuidString
     }
-    //
+    
     func notifyObservers(newConfigs: Dictionary<String, CFConfig>?, oldConfigs: Dictionary<String, CFConfig>?) {
         if let configChangeObservers = configChangeObservers {
             for (_, value) in configChangeObservers.enumerated() {

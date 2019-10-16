@@ -106,7 +106,7 @@ class CFSummaryExporter {
     func flushEvents() {
         let currentDate = Date()
         if let events = events {
-            if events.size > CFSDKConfig.shared.getConfigRequestSummaryQueueSize() || CFSharedPreferences.shared.getLastConfigRequestSummaryStoredDateTime() != nil &&
+            if events.size >= CFSDKConfig.shared.getConfigRequestSummaryQueueSize() || CFSharedPreferences.shared.getLastConfigRequestSummaryStoredDateTime() != nil &&
                 (currentDate.seconds(from: CFSharedPreferences.shared.getLastConfigRequestSummaryStoredDateTime()!)
         >= CFSDKConfig.shared.getConfigRequestSummaryQueuePollDuration()) {
                 _flushEvents()

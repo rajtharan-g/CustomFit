@@ -27,9 +27,9 @@ class CFSDKConfig {
     var API_RETRY_COUNT_VALUE: Int = 10
     var PERIODIC_EVENT_PROCESSOR_INTERVAL_VALUE: Int = 900000
     var EVENT_QUEUE_POLL_DURATION_VALUE: Int = 900000
-    var EVENT_QUEUE_SIZE_VALUE: Int = 0
+    var EVENT_QUEUE_SIZE_VALUE: Int = 1
     var CONFIG_REQUEST_SUMMARY_QUEUE_POLL_DURATION_VALUE: Int = 900000
-    var CONFIG_REQUEST_SUMMARY_QUEUE_SIZE_VALUE: Int = 0
+    var CONFIG_REQUEST_SUMMARY_QUEUE_SIZE_VALUE: Int = 1
     var API_EXPONENTIAL_BACKOFF_DELAY_VALUE: Int = 15000
     
     var sdkConfigs: [String : String]?
@@ -39,14 +39,14 @@ class CFSDKConfig {
     var configuredEventFetchWorkRequest: DispatchWorkItem?
     var SDK_CONFIG_FETCHER_WORKER_MAX_RETRIES: Int = 0
     var CONFIGURED_EVENT_FETCHER_WORKER_MAX_RETRIES: Int = 0
-    //
+    
     private init() {
         CONFIG_REFRESH_DURATION_VALUE = Int(43200000 + arc4random_uniform(UInt32(CONFIG_REFRESH_DURATION_ADDITIONAL_RANDOM_ADD_VALUE)))
         self.sdkConfigs = CFSharedPreferences.shared.getSdkConfigs()
         fetchSdkConfigs()
         fetchConfiguredEvents()
     }
-    //
+    
     func reset() {
         cancelConfiguredEventFetchWorkRequest()
         cancelSdkConfigFetchRequest()
@@ -60,7 +60,7 @@ class CFSDKConfig {
             } 
         }
     }
-    //
+    
     func fetchConfiguredEvents() {
         self.CONFIGURED_EVENT_FETCHER_WORKER_MAX_RETRIES = self.getApiRetryCount()
         APIClient.shared.getConfiguredEvents { (configuredEvents, error) in
@@ -85,7 +85,7 @@ class CFSDKConfig {
     func getConfigRefershDurationRandomAdd() -> Int {
         return getInteger(CONFIG_REFRESH_DURATION_ADDITIONAL_RANDOM_ADD_KEY, CONFIG_REFRESH_DURATION_ADDITIONAL_RANDOM_ADD_VALUE)
     }
-    //
+    
     func getConfigRefershDuration() -> Int {
         let refreshDuration = getInteger(CONFIG_REFRESH_DURATION_KEY, CONFIG_REFRESH_DURATION_VALUE)
         if (refreshDuration != CONFIG_REFRESH_DURATION_VALUE) {
@@ -94,7 +94,7 @@ class CFSDKConfig {
         }
         return refreshDuration
     }
-    //
+    
     func getApiRetryCount() -> Int {
         return getInteger(API_RETRY_COUNT_KEY, API_RETRY_COUNT_VALUE)
     }

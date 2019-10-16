@@ -35,12 +35,12 @@ class CFLifeCycleDetector {
     }
     
     @objc public func didEnterForeground() {
-        CustomFit.shared.handleAppForeground()
+        CustomFit.shared().handleAppForeground()
     }
     
     
     @objc public func didEnterBackground() {
-        CustomFit.shared.handleAppBackground()
+        CustomFit.shared().handleAppBackground()
     }
     
 }

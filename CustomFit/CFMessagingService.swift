@@ -25,8 +25,8 @@ extension CFMessagingService: MessagingDelegate {
     }
     
     public func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        if remoteMessage.appData.count > 0 && (CustomFit.shared.isCFMessage(message: remoteMessage.appData as? [String : String])) {
-            CustomFit.shared.handleCFMessage(app: UIApplication.shared, message: remoteMessage.appData as! [String : String])
+        if remoteMessage.appData.count > 0 && (CustomFit.shared().isCFMessage(message: remoteMessage.appData as? [String : String])) {
+            CustomFit.shared().handleCFMessage(app: UIApplication.shared, message: remoteMessage.appData as! [String : String])
         }
     }
     

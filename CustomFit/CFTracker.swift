@@ -54,10 +54,7 @@ public class CFTracker {
      *              The event_id is used to uniquely identify the event
      *
      */
-    public func trackEvent(event: CFEvent?) {
-        if events == nil {
-            return
-        }
+    func trackEvent(event: CFEvent?) {
         if let event = event {
             events?.enqueue(event)
             CFSharedPreferences.shared.setEvents(events: events)
@@ -66,7 +63,7 @@ public class CFTracker {
     }
     
     private func _flushEvents() {
-        if events != nil && events?.size ?? 0 > 0 {
+        if let events = events, events.size > 0 {
             if CFTracker.eventDispatchState != .inProgress {
                 cancelEventDispatchWorkRequest()
                 CFTracker.EVENT_DISPATCH_WORKER_MAX_RETRIES = CFSDKConfig.shared.getApiRetryCount()
@@ -110,14 +107,13 @@ public class CFTracker {
     }
     
     func flushEvents() {
-        let currentDate = Date()
-        if (events != nil && events?.size ?? 0 >= CFSDKConfig.shared.getEventQueueSize()) || (Int(((currentDate.timeIntervalSinceNow) - (lastPushTime?.timeIntervalSinceNow ?? 0))) >= CFSDKConfig.shared.getEventQueuePollDuration()) {
+        if let events = events, events.size >= CFSDKConfig.shared.getEventQueueSize() || Int(Date().timeIntervalSinceNow - (lastPushTime?.timeIntervalSinceNow ?? 0)) >= CFSDKConfig.shared.getEventQueuePollDuration() {
             _flushEvents()
         }
     }
     
     func forceFlush() {
-        if(events != nil && events?.size ?? 0 > 0) {
+        if let events = events, events.size > 0 {
             _flushEvents()
         }
     }

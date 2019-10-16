@@ -49,8 +49,8 @@ class CFSharedPreferences {
     private let serialQueueLabel: String = "com.customfit.ai.queue"
     //
     private init() {
-        clientKey = CustomFit.shared.clientKey
-        user = CustomFit.shared.user
+        clientKey = CustomFit.shared().clientKey
+        user = CustomFit.shared().user
         sharedPrefConfigs = PREF_CONFIG_PREFIX + (user?.id ?? "")
         sharedPrefConfigRequestSummary = PREF_CONFIG_REQUEST_SUMMARY_PREFIX + (user?.id ?? "")
         sharedPrefConfiguredEvents = PREF_CONFIGURED_EVENTS_PREFIX
@@ -168,8 +168,10 @@ class CFSharedPreferences {
     func setEvents(events: CFQueue<CFEvent>?) {
         if let events = events {
             do {
-                let encoded = try encoder.encode(events.elements)
-                defaults.set(encoded, forKey: sharedPrefEvents)
+                if let events = events.elements as? Array<CFEvent> {
+                    let encoded = try encoder.encode(events)
+                    defaults.set(encoded, forKey: sharedPrefEvents)
+                }
             } catch let error {
                 print(TAG, "Exception: \(error.localizedDescription)")
             }
