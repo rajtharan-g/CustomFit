@@ -11,7 +11,7 @@ public struct CFGeoType: Codable, Equatable {
     private var lat: Float?
     private var lon: Float?
     
-    init(lat: Float, lon: Float) {
+    public init(lat: Float, lon: Float) {
         self.lat = lat
         self.lon = lon
     }

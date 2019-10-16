@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CFEvent: Codable {
+public struct CFEvent: Codable {
     
     private var eventProperties: [String: JSON]?
     private var eventId: JSON?
@@ -20,7 +20,7 @@ struct CFEvent: Codable {
         case eventTimeStamp = "event_timestamp"
     }
     
-    init(eventID: String?, eventProperties: [String: JSON]?) {
+    public init(eventID: String?, eventProperties: [String: JSON]?) {
         self.eventProperties = eventProperties
         self.eventTimeStamp = CFUtil.getSupportedDateFormat().string(from: Date())
         if let eventID = eventID {
@@ -28,7 +28,7 @@ struct CFEvent: Codable {
         }
     }
     
-    init(builder: EventBuilder?) {
+    public init(builder: EventBuilder?) {
         self.eventTimeStamp = CFUtil.getSupportedDateFormat().string(from: Date())
         if let eventID = builder?.eventId {
             self.eventId = JSON(stringLiteral: eventID)
@@ -46,7 +46,7 @@ public class EventBuilder {
     var eventProperties: [String: JSON]?
     
     //
-    init(id: String) {
+    public init(id: String) {
         self.eventId = id
         self.eventProperties = [:]
     }

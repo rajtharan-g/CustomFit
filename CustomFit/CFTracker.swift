@@ -12,9 +12,9 @@ private enum EventDispatchState {
     case idle, inProgress
 }
 
-class CFTracker {
+public class CFTracker {
     
-    static let shared = CFTracker()
+    public static let shared = CFTracker()
     
     private var events: CFQueue<CFEvent>?
     private var lastPushTime: Date?
@@ -24,7 +24,7 @@ class CFTracker {
     public static var EVENT_DISPATCH_WORKER_MAX_RETRIES: Int = 0
     
     //
-    init() {
+    public init() {
         events = CFSharedPreferences.shared.getEvent()
         if events == nil {
             events = CFQueue<CFEvent>(elements: [])
@@ -41,7 +41,7 @@ class CFTracker {
     }
     
     //
-    func reset() {
+    public func reset() {
         forceFlush()
         cancelEventDispatchWorkRequest()
         eventDispatchWorkRequest = nil
@@ -54,7 +54,7 @@ class CFTracker {
      *              The event_id is used to uniquely identify the event
      *
      */
-    func trackEvent(event: CFEvent?) {
+    public func trackEvent(event: CFEvent?) {
         if events == nil {
             return
         }

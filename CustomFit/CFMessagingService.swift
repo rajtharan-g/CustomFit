@@ -8,9 +8,9 @@
 
 import FirebaseMessaging
 
-open class CFMessagingService: NSObject {
+public class CFMessagingService: NSObject {
     
-    static let shared = CFMessagingService()
+    public static let shared = CFMessagingService()
     
     private override init() {
         

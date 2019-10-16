@@ -6,6 +6,6 @@
 //  Copyright © 2019 Custom Fit. All rights reserved.
 //
 
-enum CFGender: String, Codable {
+public enum CFGender: String, Codable {
     case male = "MALE", female = "FEMALE", other = "OTHER"
 }

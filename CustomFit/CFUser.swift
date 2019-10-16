@@ -25,24 +25,24 @@ let DEFAULT_LOCATION: String = "default_location"
 
 public struct CFUser: Codable {
     
-    var id: String?
-    var anonymous: Bool?
-    var ip: String?
-    var email: String?
-    var phoneNumber: String?
-    var country: String?
-    var countryCode: String?
-    var defaultLocation: CFGeoType?
-    var gender: CFGender?
-    var dob: String?
-    var firstName: String?
-    var lastName: String?
-    var timeZone: String?
-    var tags: [String: String]?
-    var customProperties: [String: JSON]?
+    public var id: String?
+    public var anonymous: Bool?
+    public var ip: String?
+    public var email: String?
+    public var phoneNumber: String?
+    public var country: String?
+    public var countryCode: String?
+    public var defaultLocation: CFGeoType?
+    public var gender: CFGender?
+    public var dob: String?
+    public var firstName: String?
+    public var lastName: String?
+    public var timeZone: String?
+    public var tags: [String: String]?
+    public var customProperties: [String: JSON]?
     var privatePropertyNames: PrivatePropertyNames?
-    var deviceId: String?
-    var cfUserId: String?
+    public var deviceId: String?
+    public var cfUserId: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "user_customer_id"
@@ -65,7 +65,7 @@ public struct CFUser: Codable {
         case cfUserId = "user_id"
     }
     
-    init(builder: UserBuilder?) {
+    public init(builder: UserBuilder?) {
         if let id = builder?.id as? String, !id.isEmpty {
             self.id = id
             self.anonymous = builder?.anonymous
