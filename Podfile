@@ -5,10 +5,7 @@ target 'CustomFit' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'Alamofire'
-  pod 'Firebase'
-  pod 'Firebase/Auth'
   pod 'Firebase/Messaging'
-  pod 'Firebase/Firestore'
 
   # Pods for CustomFit
 
